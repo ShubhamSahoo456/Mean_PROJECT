@@ -1,0 +1,37 @@
+<div class="row">
+  <div class="col-md-6 mx-auto">
+  <div class="card rounded-0">
+   <div class="card-header">
+     <h3 class="mb-0">
+       Login Form
+     </h3>
+   </div>
+   <div class="card-body">
+     <form [formGroup]="LoginForm"   (ngSubmit)="onSubmit()">
+       <div class="form-group">
+         <label for="exampleInputEmail1">Email</label>
+         <input type="email" class="form-control"  formControlName="email" aria-describedby="emailHelp" placeholder="Enter Email">
+         <span class="danger-text" *ngIf="!LoginForm.get('email').valid && LoginForm.get('email').touched">{{'please enter email'}}</span>
+
+       </div>
+       <div class="form-group">
+         <label for="exampleInputEmail1">Password</label>
+         <input type="password" class="form-control"  formControlName="password" aria-describedby="emailHelp" placeholder="Enter password">
+         <span  class="danger-text" *ngIf="!LoginForm.get('password').valid && LoginForm.get('password').touched">{{'please enter password'}}</span>
+       </div>
+
+
+
+
+
+
+       <button type="submit" class="btn btn-primary"[disabled]="LoginForm.invalid">Sign in</button>
+     </form>
+   </div>
+  </div>
+
+
+  </div>
+
+ </div>
+
